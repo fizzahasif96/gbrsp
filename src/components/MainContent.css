@@ -1,0 +1,31 @@
+.main-content{
+    width: 1200px;
+    margin-top: 14px;
+}
+.custom-page-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #194619;
+    font-weight: 900;
+}
+.custom-breadcrumb{
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: -10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #194619;
+}
+.card {
+    background-color: #edeff0;
+    border: 1px solid #8EA69145;
+    border-radius: 25px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+.card-body{
+    background-color: #edeff0;
+    border-color: #194619;
+    border-radius: 25px;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
