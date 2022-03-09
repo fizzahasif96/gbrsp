@@ -3,7 +3,9 @@ import React from 'react'
 const ProjectCreate = () => {
     {console.log("project create here")}
   return (
-    <div>ProjectCreate</div>
+    <div className='main-app'>
+        project create
+      </div>
   )
 }
 

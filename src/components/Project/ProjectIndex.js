@@ -1,14 +1,15 @@
 import React from 'react'
+import SideBar from '../SideBar'
+import MainContent from '../MainContent'
 
 const ProjectIndex = () => {
     
   return (
-      <>
-      {console.log("project index here")}
-        <div>
-            Index
-        </div>
-      </>
+    <>
+      <div className='main-app'>
+        project index
+      </div>
+    </>
     
   )
 }
