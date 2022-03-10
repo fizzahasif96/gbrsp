@@ -6,8 +6,9 @@ const ProjectIndex = () => {
     
   return (
     <>
-      <div className='main-app'>
+      <div>
         project index
+        {console.log("Rendered")}
       </div>
     </>
     

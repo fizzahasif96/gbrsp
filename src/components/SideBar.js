@@ -22,13 +22,14 @@ import DefinitionIndex from './Definitions/DefinitionIndex';
 import Dashboard from './Dashboard/Dashboard';
 
 const SideBar = (props) => {
-  function handleStateForProject(headingName,url, content){
+
+  function handleStateForProject(headingName, url, content){
     var data = {
       headingName : headingName,
       url : url,
       content : content
     };
-   return props.handleClick(data);    
+    props.handleClick(data);    
   }
   
   return (
@@ -64,7 +65,7 @@ const SideBar = (props) => {
               <MenuItem onClick={() => handleStateForProject("User Management","User Management / Review", <UserManagementReview/>)}><Link to="user-review">Review User</Link></MenuItem>
             </SubMenu>
           </Menu>
-        </ProSidebar>;
+        </ProSidebar>
         </div>
     </div>
   )

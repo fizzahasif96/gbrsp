@@ -1,0 +1,38 @@
+.container{
+    width: 50%;
+    background-color: blueviolet;
+    height: 600px;
+    margin: 20px;
+  }
+  form{
+    background-color: white;
+    border-radius: 10px;
+    height: 500px;
+    margin: 20px;
+  }
+  
+  .input{
+    margin-bottom: 20px;
+    width: 500px;
+    height: 30px;
+    text-indent: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: block;
+    margin-left: 20px;
+  }
+  .checkbox {
+    margin-left: 20px;
+  }
+  .btn{ 
+    width: 300px;
+    height: 40px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: block;
+    margin-left: 110px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+  }
