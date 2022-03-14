@@ -1,6 +1,4 @@
 import React from 'react'
-import SideBar from '../SideBar'
-import MainContent from '../MainContent'
 
 const ProjectIndex = () => {
     

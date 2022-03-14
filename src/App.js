@@ -28,6 +28,7 @@ function App() {
       <SideBar handleClick = {handleStateMethod} />
       <MainContent name = {state.headingName} url = {state.url} content = {state.content} />
     </div>     
+    
     </>
   );
 }
