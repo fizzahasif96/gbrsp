@@ -75,7 +75,7 @@ function ProjectDetails({ formData, setFormData }) {
                 displayValue="name"
                 placeholder="Select Donors"
                 onSelect={(event) =>
-                    setFormData({ ...formData, donors: event.target.value })
+                    setFormData({ ...formData, donors: event })
                   }
                 ></Multiselect>
               </Form.Group>
@@ -90,7 +90,7 @@ function ProjectDetails({ formData, setFormData }) {
                 displayValue="name"
                 placeholder="Select IPs"
                 onSelect={(event) =>
-                    setFormData({ ...formData, implementingPartners: event.target.value })
+                    setFormData({ ...formData, implementingPartners: event })
                   }
                 ></Multiselect>
               </Form.Group>
@@ -107,7 +107,7 @@ function ProjectDetails({ formData, setFormData }) {
                 displayValue="name"
                 placeholder="Select CBOs"
                 onSelect={(event) =>
-                    setFormData({ ...formData, cbos: event.target.value })
+                    setFormData({ ...formData, cbos: event})
                   }
                 ></Multiselect>
               </Form.Group>
@@ -136,7 +136,7 @@ function ProjectDetails({ formData, setFormData }) {
                 displayValue="name"
                 placeholder="Select CBOs"
                 onSelect={(event) =>
-                    setFormData({ ...formData, cbos: event.target.value })
+                    setFormData({ ...formData, cbos: event })
                   }
                 ></Multiselect>
               </Form.Group>
@@ -153,7 +153,7 @@ function ProjectDetails({ formData, setFormData }) {
                 displayValue="name"
                 placeholder="Select CBOs"
                 onSelect={(event) =>
-                    setFormData({ ...formData, cbos: event.target.value })
+                    setFormData({ ...formData, cbos: event })
                   }
                 ></Multiselect>
               </Form.Group>

@@ -48,7 +48,7 @@
   }
 
   .btn{ 
-    width: 300px;
+    width: 200px;
     height: 40px;
     border: 1px solid #444;
     border-radius: 5px;
@@ -126,4 +126,75 @@
 
 p{
   color: red;
+}
+
+.hidden { 
+  display:none; 
+}
+
+.attachments-table-div{
+  margin: 10px 10px 10px 10px; 
+  border-radius: 12px; 
+  border: 1px solid #8EA69145; 
+  background: #f8f8f8;
+}
+
+.attachments-table{
+  margin-top: -15px;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto !important;
+  margin-top: 1.25rem !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.btn.btn-link {
+  color: #60AC8B;font-weight: 400;display: inline-block;text-align: center;
+  vertical-align: middle;user-select: none;
+  background-color: transparent;padding: 0.4375rem 0.875rem;
+  font-size: 0.875rem;
+  border: 1px solid #007625;
+  line-height: 1.5715;
+  border-radius: 0.25rem;
+  width: 200px;
+  margin-left: 20px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #007625;
+  color: white;
+}
+
+.modal-title {
+    font-size: 26px;
+    color: #194619;
+    font-weight: bolder;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #252b36;
+    border-color: #252b36;
+}
+
+.modal-footer{
+  display: flex;
+}
+
+.btn-circle.btn-sm {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  font-size: 8px;
+  text-align: center;
+  background-color: white;
+  color: #007625;
+  opacity: 0.5;
 }
