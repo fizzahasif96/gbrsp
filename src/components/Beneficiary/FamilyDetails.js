@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Container, Row, Col } from 'react-bootstrap'
 import Modal from "react-bootstrap/Modal";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-date-picker/dist/DatePicker.css'
 import Select from 'react-select';
-import {MdDelete} from 'react-icons/md'
+import { MdDelete } from 'react-icons/md'
 
 const FamilyDetails = ({ formData, setFormData }) => {
     const relationshipsCatalog = [
@@ -36,37 +36,38 @@ const FamilyDetails = ({ formData, setFormData }) => {
     }
 
     const [dependentData, setDependentData] = useState({});
-    const [rowIndex, setRowIndex] = useState(0);
+    const [dependents, setDependents] = useState([]);
     const getModalData = () => {
-         //setDependentData({ ...dependentData, id: new Date().getTime().toString() })
-       // setRowIndex(new Date().getTime().toString());
-       ///hint : may be useEffect will be useful in this situation
         hideModal();
-        formData.dependents.push(dependentData);
+        const newDependent = {
+            id: new Date().getTime().toString(),
+            name: dependentData.name,
+            gender: dependentData.gender.label,
+            age: dependentData.age,
+            relationshipWithBeneficiary: dependentData.relationshipWithBeneficiary.label,
+            cnic: dependentData.cnic,
+            education: dependentData.education,
+            targetGroup: dependentData.targetGroup.label,
+            remarks: dependentData.remarks
+        };
+        const newDependents = [...dependents, newDependent];
+        setDependents(newDependents);
     }
 
-    const deleteItem = (index) => {
-        const updatedItems = formData.dependents.filter((curElem) => {
-          return curElem.id !== index;
-        });
-        setFormData(updatedItems);
-      };
+    useEffect(() => {
+        setFormData({ ...formData, dependents: dependents })
+      }, [dependents])
+      if(dependents.length > 0){
+        console.log(formData);
+      }
 
-    const tableRows = formData.dependents.map((dependent) =>
-        <tr key= {rowIndex}>
-            <td>{dependent.name}</td>
-            <td>{dependent.gender.label}</td>
-            <td>{dependent.age}</td>
-            <td>{dependent.relationshipWithBeneficiary.label}</td>
-            <td>{dependent.cnic}</td>
-            <td>{dependent.education}</td>
-            <td>{dependent.targetGroup.label}</td>
-            <td>{dependent.remarks}</td>
-            <td><MdDelete 
-                //onClick={() => deleteItem(rowIndex)}
-            /></td>
-        </tr>  
-    );
+    const handleDelete = (dependentId) => {
+        const newDependents = [...dependents];
+        const index = dependents.findIndex(x => x.id === dependentId);
+        newDependents.splice(index, 1);
+        setDependents(newDependents);
+    }
+
     return (
         <div className="sign-up-container">
             <Container>
@@ -210,7 +211,23 @@ const FamilyDetails = ({ formData, setFormData }) => {
                                                 </tr>
                                             </thead>
                                             <tbody className="dependent-tbody">
-                                                {tableRows}
+                                                {dependents.map(function (dependent, index) {
+                                                    return (
+                                                        <tr key={index}>
+                                                            <td>{dependent.name}</td>
+                                                            <td>{dependent.gender}</td>
+                                                            <td>{dependent.age}</td>
+                                                            <td>{dependent.relationshipWithBeneficiary}</td>
+                                                            <td>{dependent.cnic}</td>
+                                                            <td>{dependent.education}</td>
+                                                            <td>{dependent.targetGroup}</td>
+                                                            <td>{dependent.remarks}</td>
+                                                            <td><MdDelete
+                                                                onClick={() => handleDelete(dependent.id)}
+                                                            /></td>
+                                                        </tr>
+                                                    )
+                                                })}
                                             </tbody>
                                             <tfoot>
                                                 <tr>

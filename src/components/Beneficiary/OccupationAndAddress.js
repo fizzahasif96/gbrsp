@@ -11,37 +11,39 @@ import Address from "./Address";
 
 const OccupationAndAddress = ({ formData, setFormData }) => {
   const [occupationData, setOccupationData] = useState({});
+  const [occupations, setOccupations] = useState([]);
   const typeCatalog = [
     { value: 'Job', label: 'Job' },
     { value: 'Business', label: 'Business' }
   ];
-  const [rowIndex, setRowIndex] = useState(0);
   const GetOccupation = () => {
-    // debugger;
-    // setFormData({ ...formData, occupations: occupationData })
-    // debugger;
-    formData.occupations.push(occupationData);
-    setRowIndex(rowIndex + 1);
+    const newOccupation = {
+      id: new Date().getTime().toString(),
+      name: occupationData.name,
+      occupationType: occupationData.occupationType.label,
+      nameOfOrg: occupationData.nameOfOrg,
+      designation: occupationData.designation,
+      nature: occupationData.nature,
+      salary: occupationData.salary,
+    };
+    const newOccupations = [...occupations, newOccupation];
+    setOccupations(newOccupations);
   }
-  
 
-  // useEffect(() => {
-  //   console.log("here");
-  // }, [rowIndex])
+  const handleDelete = (occupationId) => {
+    const newOccupations = [...occupations];
+    const index = occupations.findIndex(x => x.id === occupationId);
+    newOccupations.splice(index, 1);
+    setOccupations(newOccupations);
+  }
 
-  const occupationRows = formData.occupations.map((occupation) =>
-    <tr>
-      <td>{occupation.name}</td>
-      <td>{occupation.occupationType.label}</td>
-      <td>{occupation.nameOfOrg}</td>
-      <td>{occupation.designation}</td>
-      <td>{occupation.nature}</td>
-      <td>{occupation.salary}</td>
-      <td><MdDelete
-      //onClick={() => deleteItem(rowIndex)}
-      /></td>
-    </tr>
-  );
+  useEffect(() => {
+    setFormData({ ...formData, occupations: occupations })
+  }, [occupations])
+  if(occupations.length > 0){
+    console.log(formData);
+  }
+ 
   return (
     <div className="sign-up-container">
       <Container>
@@ -125,7 +127,21 @@ const OccupationAndAddress = ({ formData, setFormData }) => {
                         </tr>
                       </thead>
                       <tbody className="dependent-tbody">
-                        { occupationRows }
+                        {occupations.map(function (occupation, index) {
+                          return (
+                            <tr key={index}>
+                              <td>{occupation.name}</td>
+                              <td>{occupation.occupationType.label}</td>
+                              <td>{occupation.nameOfOrg}</td>
+                              <td>{occupation.designation}</td>
+                              <td>{occupation.nature}</td>
+                              <td>{occupation.salary}</td>
+                              <td><MdDelete
+                              onClick={() => handleDelete(occupation.id)}
+                              /></td>
+                            </tr>
+                          )
+                        })}
                       </tbody>
                     </table>
                   </div>
@@ -136,21 +152,21 @@ const OccupationAndAddress = ({ formData, setFormData }) => {
           <Row>
             <Col>
               <Form.Group>
-                <Address title="Permanent Address" addressType={formData.permanentAddress} />
+                <Address title="Permanent Address" addressType={formData.permanentAddress} formData={formData} setFormData={setFormData} />
               </Form.Group>
             </Col>
           </Row>
           <Row>
             <Col>
               <Form.Group>
-                <Address title="Residential Address" addressType={formData.residentialAddress} />
+                <Address title="Residential Address" addressType={formData.residentialAddress} formData={formData} setFormData={setFormData} />
               </Form.Group>
             </Col>
           </Row>
           <Row>
             <Col>
               <Form.Group>
-                <Address title="Official Address" addressType={formData.officialAddress} />
+                <Address title="Official Address" addressType={formData.officialAddress} formData={formData} setFormData={setFormData} />
               </Form.Group>
             </Col>
           </Row>
