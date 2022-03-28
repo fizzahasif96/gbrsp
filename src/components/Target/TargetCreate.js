@@ -6,6 +6,7 @@ import DatePicker from 'react-date-picker';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-date-picker/dist/DatePicker.css'
 import Select from 'react-select';
+import {Link } from "react-router-dom";
 
 const TargetCreate = () => {
   const initialValues = {
@@ -303,7 +304,9 @@ const TargetCreate = () => {
                 <div className="footer">
                   <button className="cancel-btn"> Cancel </button>
                   <button className="next-btn"> Add Target </button>
-                  <button className="next-btn target-breakdown-btn"> Add Breakdown Amounts </button>
+                  <button className="next-btn target-breakdown-btn" 
+                    //onClick={event =>  window.location.href='/target-break-down'}
+                  > Add Breakdown Amounts </button>
                 </div>
               </Form>
             </Container>
