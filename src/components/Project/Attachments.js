@@ -34,6 +34,8 @@ function Attachments({ formData, setFormData }) {
           name: event.target.files[0].name,
           type:  event.target.files[0].name.split(".")[1],
           uploadDate: event.target.files[0].lastModifiedDate.toDateString(),
+          file: event.target.files[0].name
+
         };
         debugger;
         const newFiles = [...files, newFile];
@@ -111,13 +113,14 @@ function Attachments({ formData, setFormData }) {
                           <td colSpan="4">
                             <div className="row">
                               <div className="col text-center">
-                                <div className="hidden">
+                               
                                   <input
                                     type="file"
                                     onChange={(e) => handleFileChange(e)}
                                     ref={fileInput}
+                                    //className="hidden"
                                   />
-                                </div>
+                                
                                 <button onClick={() => handleClick()} type="button" className="btn btn-link">Upload Document</button>
                               </div>
                             </div>

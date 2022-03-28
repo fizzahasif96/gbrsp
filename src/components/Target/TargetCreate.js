@@ -6,7 +6,7 @@ import DatePicker from 'react-date-picker';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-date-picker/dist/DatePicker.css'
 import Select from 'react-select';
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TargetCreate = () => {
   const initialValues = {
@@ -124,7 +124,7 @@ const TargetCreate = () => {
   const validate = (values) => {
     const errors = {};
     if (!values.name) {
-      errors.name =  "Target is required!";
+      errors.name = "Target is required!";
     }
     errors.activities = values.activities.length == 0 ? "Select at least one Activity!" : "";
     errors.thematicAreas = values.thematicAreas.length == 0 ? "Select at least one Thematic Area!" : "";
@@ -139,177 +139,170 @@ const TargetCreate = () => {
     <div className="card wizard-form">
       <div className="form-container">
         <div className="body">
-            <Container>
-              <Form onSubmit={handleSubmit}>
-                <Row className="row">
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">Target</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="name"
-                        placeholder="Add Target"
-                        value={formData.name}
-                        onChange={handleChange}
-                      ></Form.Control>
-                      <p>{errors.name}</p>
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group>
-                      <Form.Label>Project</Form.Label>
-                      <Select
-                        name="project"
-                        placeholder="Select Project"
-                        onChange={(e) =>
-                          setFormData({ ...formData, project: e })
-                        }
-                        options={projects}
-                      />
-                      <p>{errors.projects}</p>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row className="row">
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">Activity(s)</Form.Label>
-                      <Multiselect
-                        className="multi-select"
-                        name="activities"
-                        options={activityOptions}
-                        value={formData.activities}
-                        displayValue="name"
-                        placeholder="Select Activity"
+          <Container>
+            <Form onSubmit={handleSubmit}>
+              <Row className="row">
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">Target</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="name"
+                      placeholder="Add Target"
+                      value={formData.name}
+                      onChange={handleChange}
+                    ></Form.Control>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group>
+                    <Form.Label>Project</Form.Label>
+                    <Select
+                      name="project"
+                      placeholder="Select Project"
+                      onChange={(e) =>
+                        setFormData({ ...formData, project: e })
+                      }
+                      options={projects}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row className="row">
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">Activity(s)</Form.Label>
+                    <Multiselect
+                      className="multi-select"
+                      name="activities"
+                      options={activityOptions}
+                      value={formData.activities}
+                      displayValue="name"
+                      placeholder="Select Activity"
                       onSelect={(event) =>
                         setFormData({ ...formData, activities: event })
                       }
-                      ></Multiselect>
-                      <p>{errors.activities}</p>
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group>
-                      <Form.Label>Thematic Area(s)</Form.Label>
-                      <Multiselect
-                        options={taOptions}
-                        className="multi-select"
-                        value={formData.thematicAreas}
-                        displayValue="name"
-                        placeholder="Select Thematic Areas"
-                        onSelect={(event) =>
-                          setFormData({ ...formData, thematicAreas: event })
-                        }
-                      ></Multiselect>
-                      <p>{errors.thematicAreas}</p>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row className="row">
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">Output Indicator(s)</Form.Label>
-                      <Multiselect
-                        className="multi-select"
-                        options={opiOptions}
-                        value={formData.outputIndicators}
-                        displayValue="name"
-                        placeholder="Select Output Indicator"
-                        onSelect={(event) =>
-                          setFormData({ ...formData, outputIndicators: event })
-                        }
-                      ></Multiselect>
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">Outcome Indicator(s)</Form.Label>
-                      <Multiselect
-                        className="multi-select"
-                        options={ociOptions}
-                        value={formData.outcomeIndicators}
-                        displayValue="name"
-                        placeholder="Select Outcome Indicator"
-                        onSelect={(event) =>
-                          setFormData({ ...formData, outcomeIndicators: event })
-                        }
-                      ></Multiselect>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row className="row">
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">Section(s)</Form.Label>
-                      <Multiselect
-                        className="multi-select"
-                        options={sectionOptions}
-                        value={formData.sections}
-                        displayValue="name"
-                        placeholder="Select Section"
-                        onSelect={(event) =>
-                          setFormData({ ...formData, sections: event })
-                        }
-                      ></Multiselect>
-                       <p>{errors.sections}</p>
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">SDG(s)</Form.Label>
-                      <Multiselect
-                        className="multi-select"
-                        options={sdgOptions}
-                        value={formData.sdgs}
-                        displayValue="name"
-                        placeholder="Select SDG"
-                        onSelect={(event) =>
-                          setFormData({ ...formData, sdgs: event })
-                        }
-                      ></Multiselect>
-                       <p>{errors.sdgs}</p>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row className="row">
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">Start Date</Form.Label>
-                      <DatePicker className="date" onChange={onStartDateChange} value={formData.startDate} />
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group>
-                      <Form.Label className="form-label">End Date</Form.Label>
-                      <DatePicker className="date" onChange={onEndDateChange} value={formData.endDate} />
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row className='row'>
-                  <Col>
-                    <Form.Group>
-                      <Form.Label>Sub Village</Form.Label>
-                      <Select
-                        placeholder="Select Sub Village"
-                        onChange={(e) =>
-                          setFormData({ ...formData, subVillage: e })
-                        }
-                        options={subVillages}
-                      />
-                      <p>{errors.subVillages}</p>
-                    </Form.Group>
-                  </Col>
-                  <Col></Col>
-                </Row>
-                <div className="footer">
-                  <button className="cancel-btn"> Cancel </button>
-                  <button className="next-btn"> Add Target </button>
-                  <button className="next-btn target-breakdown-btn" 
-                    //onClick={event =>  window.location.href='/target-break-down'}
-                  > Add Breakdown Amounts </button>
-                </div>
-              </Form>
-            </Container>
+                    ></Multiselect>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group>
+                    <Form.Label>Thematic Area(s)</Form.Label>
+                    <Multiselect
+                      options={taOptions}
+                      className="multi-select"
+                      value={formData.thematicAreas}
+                      displayValue="name"
+                      placeholder="Select Thematic Areas"
+                      onSelect={(event) =>
+                        setFormData({ ...formData, thematicAreas: event })
+                      }
+                    ></Multiselect>
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row className="row">
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">Output Indicator(s)</Form.Label>
+                    <Multiselect
+                      className="multi-select"
+                      options={opiOptions}
+                      value={formData.outputIndicators}
+                      displayValue="name"
+                      placeholder="Select Output Indicator"
+                      onSelect={(event) =>
+                        setFormData({ ...formData, outputIndicators: event })
+                      }
+                    ></Multiselect>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">Outcome Indicator(s)</Form.Label>
+                    <Multiselect
+                      className="multi-select"
+                      options={ociOptions}
+                      value={formData.outcomeIndicators}
+                      displayValue="name"
+                      placeholder="Select Outcome Indicator"
+                      onSelect={(event) =>
+                        setFormData({ ...formData, outcomeIndicators: event })
+                      }
+                    ></Multiselect>
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row className="row">
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">Section(s)</Form.Label>
+                    <Multiselect
+                      className="multi-select"
+                      options={sectionOptions}
+                      value={formData.sections}
+                      displayValue="name"
+                      placeholder="Select Section"
+                      onSelect={(event) =>
+                        setFormData({ ...formData, sections: event })
+                      }
+                    ></Multiselect>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">SDG(s)</Form.Label>
+                    <Multiselect
+                      className="multi-select"
+                      options={sdgOptions}
+                      value={formData.sdgs}
+                      displayValue="name"
+                      placeholder="Select SDG"
+                      onSelect={(event) =>
+                        setFormData({ ...formData, sdgs: event })
+                      }
+                    ></Multiselect>
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row className="row">
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">Start Date</Form.Label>
+                    <DatePicker className="date" onChange={onStartDateChange} value={formData.startDate} />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="form-label">End Date</Form.Label>
+                    <DatePicker className="date" onChange={onEndDateChange} value={formData.endDate} />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row className='row'>
+                <Col>
+                  <Form.Group>
+                    <Form.Label>Sub Village</Form.Label>
+                    <Select
+                      placeholder="Select Sub Village"
+                      onChange={(e) =>
+                        setFormData({ ...formData, subVillage: e })
+                      }
+                      options={subVillages}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col></Col>
+              </Row>
+              <div className="footer">
+                <button className="cancel-btn"> Cancel </button>
+                <button className="next-btn"> Add Target </button>
+                <button className="next-btn target-breakdown-btn"
+                //onClick={event =>  window.location.href='/target-break-down'}
+                > Add Breakdown Amounts </button>
+              </div>
+            </Form>
+          </Container>
         </div>
       </div>
     </div>
