@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/fizzahasif96/gbrsp/static/css/main.1075d875.css",
-    "main.js": "/fizzahasif96/gbrsp/static/js/main.b69f6304.js",
+    "main.js": "/fizzahasif96/gbrsp/static/js/main.1f5bced2.js",
     "static/media/gbrsp-logo-white-text.png": "/fizzahasif96/gbrsp/static/media/gbrsp-logo-white-text.f5cc42a231a8d1c089fe.png",
     "index.html": "/fizzahasif96/gbrsp/index.html",
     "main.1075d875.css.map": "/fizzahasif96/gbrsp/static/css/main.1075d875.css.map",
-    "main.b69f6304.js.map": "/fizzahasif96/gbrsp/static/js/main.b69f6304.js.map"
+    "main.1f5bced2.js.map": "/fizzahasif96/gbrsp/static/js/main.1f5bced2.js.map"
   },
   "entrypoints": [
     "static/css/main.1075d875.css",
-    "static/js/main.b69f6304.js"
+    "static/js/main.1f5bced2.js"
   ]
 }
