@@ -1,4 +1,4 @@
-
+/* @import url('http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'); */
   form{
     border-radius: 10px;
     margin: 20px;
@@ -146,8 +146,11 @@ p{
 .table-responsive {
   display: block;
   width: 100%;
-  overflow-x: auto !important;
   margin-top: 1.25rem !important;
+}
+
+.table-responsive-scrollbar-x {
+  overflow-x: auto;
 }
 
 .text-nowrap {

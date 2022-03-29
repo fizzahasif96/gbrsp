@@ -118,7 +118,7 @@ function Attachments({ formData, setFormData }) {
                                     type="file"
                                     onChange={(e) => handleFileChange(e)}
                                     ref={fileInput}
-                                    //className="hidden"
+                                    className="hidden"
                                   />
                                 
                                 <button onClick={() => handleClick()} type="button" className="btn btn-link">Upload Document</button>

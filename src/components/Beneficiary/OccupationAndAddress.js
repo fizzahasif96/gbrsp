@@ -53,7 +53,7 @@ const OccupationAndAddress = ({ formData, setFormData }) => {
               <Form.Group>
                 <Form.Label>Occupation</Form.Label>
                 <div className="card attachments-table-div">
-                  <div className="table-responsive" id="attachment-table">
+                  <div className="table-responsive table-responsive-scrollbar-x" id="attachment-table">
                     <table className="table text-nowrap attachments-table">
                       <thead>
                         <tr>
