@@ -14,18 +14,18 @@ export const BeneficiariesData =
       {
         label: 'Beneficiary Gender',
         field: 'gender',
-        width: 270,
+        width: 150,
       },
       {
         label: 'Beneficiary CNIC',
         field: 'cnic',
-        width: 200,
+        width: 150,
       },
       {
         label: 'Beneficiary Contact',
         field: 'contact',
         sort: 'asc',
-        width: 100,
+        width: 150,
       },
     ],
     rows: [

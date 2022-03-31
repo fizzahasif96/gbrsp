@@ -143,10 +143,10 @@ p{
   margin-top: -15px;
 }
 
-.table-responsive {
+.table-activity {
   display: block;
   width: 100%;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   margin-top: 0 !important;
 }
 
@@ -250,4 +250,12 @@ tr p.name, tr p.cnic {
   color: #007625 !important;
   margin: 0px;
   font-size: 12px;
+}
+
+.datatable{
+  background-color: #f0f6f5;
+}
+
+.datatable td {
+  background-color: #f8f8f8;
 }

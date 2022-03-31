@@ -17,11 +17,9 @@ const SyncBeneficiaries = () => {
       e.forEach((item) => {
         if(item.gender == "male"){
           newMaleCount = newMaleCount + 1;
-         // 
         }
         else {
-        // 
-        newFemaleCount = newFemaleCount + 1;
+          newFemaleCount = newFemaleCount + 1;
         }
       })
       setMaleCount(newMaleCount)
@@ -75,7 +73,7 @@ const SyncBeneficiaries = () => {
             <div className="col-md-6 col-sm-12 p-0 text-right female-count">Female: {femaleCount}</div>
           </div>
         </div>
-        <div className="table-responsive selected-beneficiaries-table">
+        <div className="table-activity selected-beneficiaries-table">
           <table className="table text-nowrap">
             <tbody className="selected-beneficiaries-tbody">
               {selectedBeneficiaries.map(function (selectedBeneficiary, index) {
@@ -93,7 +91,7 @@ const SyncBeneficiaries = () => {
         </div>
       </div>
       <div className='panel-content-container right-panel-width'>
-        <div className="table-responsive selected-beneficiaries-table">
+        <div className="table-activity selected-beneficiaries-table">
           <MDBDataTableV5
             hover
             entriesOptions={[5, 20, 25]}
@@ -110,6 +108,7 @@ const SyncBeneficiaries = () => {
               setAllCheckBox(e);
             }}
             multipleCheckboxes
+            className="datatable"
           />
         </div>
       </div>
