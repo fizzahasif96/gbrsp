@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/gbrsp/static/css/main.aaabb43c.css",
-    "main.js": "/gbrsp/static/js/main.7d1bc359.js",
+    "main.css": "/gbrsp/static/css/main.075fa833.css",
+    "main.js": "/gbrsp/static/js/main.52e9c1f3.js",
     "static/media/gbrsp-logo-white-text.png": "/gbrsp/static/media/gbrsp-logo-white-text.f5cc42a231a8d1c089fe.png",
     "index.html": "/gbrsp/index.html",
-    "main.aaabb43c.css.map": "/gbrsp/static/css/main.aaabb43c.css.map",
-    "main.7d1bc359.js.map": "/gbrsp/static/js/main.7d1bc359.js.map"
+    "main.075fa833.css.map": "/gbrsp/static/css/main.075fa833.css.map",
+    "main.52e9c1f3.js.map": "/gbrsp/static/js/main.52e9c1f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.aaabb43c.css",
-    "static/js/main.7d1bc359.js"
+    "static/css/main.075fa833.css",
+    "static/js/main.52e9c1f3.js"
   ]
 }
