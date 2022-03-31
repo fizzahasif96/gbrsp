@@ -147,7 +147,7 @@ p{
   display: block;
   width: 100%;
   overflow-x: auto;
-  margin-top: 1.25rem !important;
+  margin-top: 0 !important;
 }
 
 .text-nowrap {
@@ -205,4 +205,49 @@ p{
 
 .col-width{
   width: 50%;
+}
+.left-panel-width{
+  width: 25%;
+}
+.right-panel-width{
+  width: 75%;
+  margin-left: 20px;
+}
+.panel {
+  display: flex;
+}
+.panel-content-container {
+  border-radius: 25px;
+  border: 1px solid #8EA69145;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.panel-tab-heading {
+  font-family: Montserrat;
+  color: #194619;
+  background-color: #f0f6f5;
+  padding: 15px 0px;
+  border-bottom: 1px solid #d8e2dd;
+  text-align: center;
+}
+
+.male-count {
+  font-size: 10px;
+  text-align: left !important;
+  padding-left: 25px;
+}
+.female-count {
+  font-size: 10px;
+  text-align: right !important;
+  padding: 0 !important;
+}
+.selected-beneficiaries-table {
+  background-color:white;
+  min-height:320px;
+}
+
+tr p.name, tr p.cnic {
+  color: #007625 !important;
+  margin: 0px;
+  font-size: 12px;
 }
